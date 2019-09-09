@@ -125,4 +125,6 @@ LOGIN_URL = '/login/'
 
 LOGOUT_REDIRECT_URL = 'inicial'
 
+LOGIN_REDIRECT_URL = 'inicial'
+
 
