@@ -9,7 +9,7 @@ def index(request):
 	return  render(request, 'index.html') 
 
 
-def registro(request):
+def cadastro(request):
 	form = UserCreationForm(request.POST or None)
 	if form.is_valid():
 		form.save()
@@ -17,4 +17,4 @@ def registro(request):
 	contexto = {
 	'form': form
 	}
-	return render(request, 'registro.html', contexto)
+	return render(request, 'cadastro.html', contexto)
