@@ -19,4 +19,11 @@ def cadastro(request):
 	return render(request, 'cadastro.html', contexto)
 
 def login(request):
-	return render(request, 'login.html')
+	form = UserCreationForm(request.POST or None)
+	if form.is_valid():
+		form.save()
+		return redirect('login')
+	contexto = {
+	'form' : form
+	}
+	return render(request, 'login.html', contexto)

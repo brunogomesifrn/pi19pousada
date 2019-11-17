@@ -121,10 +121,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-LOGIN_URL = '/login/'
+LOGIN_URL = '/index/'
 
-LOGOUT_REDIRECT_URL = 'inicial'
+LOGOUT_REDIRECT_URL = 'index'
 
-LOGIN_REDIRECT_URL = 'inicial'
+LOGIN_REDIRECT_URL = 'index'
 
 

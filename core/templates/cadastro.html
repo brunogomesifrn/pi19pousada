@@ -48,30 +48,65 @@
 <br>
 <hr>
 
-
-
-
-
 <div class="card bg-light">
 <article class="card-body mx-auto" style="max-width: 400px;">
+<<<<<<< HEAD
 
 	<form method="POST"> 
         {% csrf_token %}
         {{form}}
     }
     }
+=======
+	<h4 class="card-title mt-3 text-center">Crie a sua Conta de Usuario</h4>
+	<p class="text-center">Crie uma conta de administrador do Zero.</p>
+
+	<p class="divider-text">
+     
+    </p>
+	<form>
+>>>>>>> 13791f546b916faaddcdfa9b5c640b4bb1f6bfde
 	<div class="form-group input-group">
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
 		 </div>
         <input name="" class="form-control" placeholder="Seu Nome" type="text">
+
     </div> <!-- form-group// -->
+
+<div class="form-group input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+         </div>
+        <input name="" class="form-control" placeholder="CPF" type="text">
+        
+    </div> <!-- form-group// -->
+
     <div class="form-group input-group">
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
 		 </div>
+<<<<<<< HEAD
         <input name="" class="form-control" placeholder="Endereço de E-mail" type="email">
     </div> <!-- form-group// -->
+=======
+        <input name="" class="form-control" placeholder="E-mail" type="email">
+    </div> <!-- form-group// -->
+    
+
+    <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-building"></i> </span>
+		</div>
+		<select class="form-control">
+			<option selected=""> Selecione a sua Função</option>
+			<option>Reservista</option>
+			<option>Reservista</option>
+			<option>Programador</option>
+            <option>Proprietário</option>
+		</select>
+	</div> <!-- form-group end.// -->
+>>>>>>> 13791f546b916faaddcdfa9b5c640b4bb1f6bfde
     <div class="form-group input-group">
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
@@ -83,11 +118,15 @@
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 		</div>
         <input class="form-control" placeholder="Repetir Senha" type="password">
-    </div> <!-- form-group// -->                                      
+    </div> <!-- form-group// -->   
+
     <div class="form-group">
         <button type="submit" class="btn btn-primary btn-block"> Criar Conta </button>
     </div> <!-- form-group// -->      
-    <p class="text-center">Você já é um usuario? <a href="">Fazer Login</a> </p>                                                                 
+
+    <p class="text-center">Você já é um usuario? <a href="{% url 'login' %}">Fazer Login</a> </p>
+    <button type="submit" class="btn btn-danger">Logout</button>
+                                                                     
 </form>
 
 </article>
