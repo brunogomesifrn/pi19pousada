@@ -1,5 +1,4 @@
 from django.db import models
-from django.contrib.auth.models import User
 
 
 class Reservar(models.Model):
@@ -9,7 +8,7 @@ class Reservar(models.Model):
 		return self.nome
 
 class usuarios(models.Model):
-	nome = models.CharField('Nome', max_length=50)
+	nome = models.CharField('nome', max_length=50)
 	biografia = models.CharField('Biografia', max_length=1000, null=True)
 	cpf = models.CharField('cpf', max_length=14)
 	idade = models.IntegerField('Idade')
