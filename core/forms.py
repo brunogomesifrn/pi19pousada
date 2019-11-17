@@ -1,11 +1,11 @@
+from django.contrib.auth.forms import UserCreationForm
 from django.forms import ModelForm
-from .models import usuarios
 
 
-class usuariosForms(ModelForm):
-	class Meta:
-		model = usuarios
-		fields = ['nome', 'biografia', 'email', 'idade', 'foto']
+
+class usuarios(UserCreationForm):
+	class Meta(UserCreationForm.Meta):
+		fields = ['first_name', 'last_name', 'username', 'email', 'password1', 'password2']
 
 #class Cursos(ModelForm):
 #class Meta():
