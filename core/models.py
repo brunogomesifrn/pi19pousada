@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Reservar(models.Model):
@@ -7,10 +8,10 @@ class Reservar(models.Model):
 	def __str__(self):
 		return self.nome
 
-class Dancarinos(models.Model):
+class usuarios(models.Model):
 	nome = models.CharField('Nome', max_length=50)
 	biografia = models.CharField('Biografia', max_length=1000, null=True)
-	curso = models.CharField('Curso', max_length=30)
+	cpf = models.CharField('cpf', max_length=14)
 	idade = models.IntegerField('Idade')
 	foto = models.ImageField('Foto', upload_to='templates', null=True)
-	estilo = models.ForeignKey(Estilos, on_delete=models.CASCADE)
+	

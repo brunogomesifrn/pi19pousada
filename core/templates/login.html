@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  {% load static %}
   <title>Tela de login</title>
   <style type="text/css">
     
@@ -272,6 +273,7 @@ input[type=text]:placeholder {
   </style>
 </head>
 <body>
+  <h1>Registro de Usuário</h1>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -286,6 +288,9 @@ input[type=text]:placeholder {
       <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
     </div>
 
+<h1>Registro de Usuário</h1>
+<form method="post">
+{% csrf_token %}
     <!-- Login Form -->
     <form>
       <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
@@ -295,7 +300,7 @@ input[type=text]:placeholder {
 
     <!-- Remind Passowrd -->
     <div id="formFooter">
-      <a class="underlineHover" href="#">Esqueceu a senha?</a>
+      <a class="underlineHover" href="cadastro">Esqueceu a senha?</a>
     </div>
 
   </div>

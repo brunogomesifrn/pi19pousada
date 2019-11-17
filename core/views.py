@@ -8,7 +8,6 @@ from django.contrib.auth.forms import UserCreationForm
 def index(request):
 	return  render(request, 'index.html') 
 
-
 def cadastro(request):
 	form = UserCreationForm(request.POST or None)
 	if form.is_valid():
@@ -18,3 +17,6 @@ def cadastro(request):
 	'form': form
 	}
 	return render(request, 'cadastro.html', contexto)
+
+def login(request):
+	return render(request, 'login.html')
