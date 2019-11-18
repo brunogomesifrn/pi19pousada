@@ -25,7 +25,7 @@
       <form action="{% url 'index' %}" method="post">
         {% csrf_token %}
 
-        <p class="btn btn-info">Usuário: {{ form.username.label_tag }} {{ form.username}}</p> <br/>
+        <p class="btn btn-info"> {{ form.username.label_tag }} {{ form.username}}</p> <br/>
         <p class="btn btn-info">Senha: {{ form.password1.label_tag }} {{ form.password1}} </p>  <br/>  
         <br/> 
 
