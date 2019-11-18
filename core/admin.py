@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import Apartamento, Reservar
 
-# Register your models here.
+admin.site.register(Apartamento)
+admin.site.register(Reservar)

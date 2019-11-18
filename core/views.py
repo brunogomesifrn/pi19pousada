@@ -3,31 +3,48 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from .forms import usuarios
 from django.http import HttpResponse
+from .forms import Reservar
 
 # Create your views here.
 def index(request):
-	return  render(request, 'index.html') 
+    return  render(request, 'index.html') 
 
 def cadastro(request):
-	if request.method == 'POST':
-		form = usuarios(request.POST or None)
-		if form.is_valid():
-			form.save()
-			return redirect('login')
-		else:
-			return HttpResponse('erro. verifique suas informações')
-	else:
-		form = usuarios()
-	contexto = {'form': form}
+    if request.method == 'POST':
+        form = usuarios(request.POST or None)
+        if form.is_valid():
+            form.save()
+            return redirect('login')
+        else:
+            return HttpResponse('erro. verifique suas informações')
+    else:
+        form = usuarios()
+    contexto = {'form': form}
 
-	return render(request, 'cadastro.html', contexto)
+    return render(request, 'cadastro.html', contexto)
 
 def login(request):
-	form = UserCreationForm(request.POST or None)
-	if form.is_valid():
-		form.save()
-		return redirect('login')
-	contexto = {
-	'form' : form
-	}
-	return render(request, 'login.html', contexto)
+    form = UserCreationForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return redirect('login')
+    contexto = {
+    'form' : form
+    }
+    return render(request, 'login.html', contexto)
+
+def reservar(request):
+    if request.method == 'POST':
+        form = Reservar(request.POST or None)
+        if form.is_valid():
+        
+            form.save()
+            return redirect('index')
+        else:
+            return HttpResponse('erro. verifique suas informações')
+    else:
+        form = Reservar(initial={'cliente':request.user.pk})
+
+    contexto = {'form': Reservar}
+    return render(request, 'reserva.html', contexto)    
+
