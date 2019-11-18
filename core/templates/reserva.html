@@ -63,8 +63,8 @@ body {
 			<div class="col-md-3">
 				<div class="contact-info">
 					<img src="https://image.ibb.co/kUASdV/contact-image.png" alt="image"/>
-					<h2>Contact Us</h2>
-					<h4>We would love to hear from you !</h4>
+					<h2>Faça uma Reserva Manual</h2>
+					<h4> Receberemos os dados preenchidos e entraremos em contato com você por E-mail!</h4>
 				</div>
 			</div>
 			<div class="col-md-9">
@@ -72,7 +72,9 @@ body {
 					<form method="post" enctype="multipart/form-data">
 				 {% csrf_token %}
 				{{form}}			
- 			<button type="submit" class="btn btn-danger">RESERVAR!</button>
+				<br/>
+				<br/>
+ 			<button  type="submit" class="btn btn-danger">RESERVAR!</button>
 					</form>
 				</div>
 			</div>
