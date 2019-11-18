@@ -2,38 +2,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Cadastro</title>
-<style type="text/css">
-	.divider-text {
-    position: relative;
-    text-align: center;
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
-.divider-text span {
-    padding: 7px;
-    font-size: 12px;
-    position: relative;   
-    z-index: 2;
-}
-.divider-text:after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    border-bottom: 1px solid #ddd;
-    top: 55%;
-    left: 0;
-    z-index: 1;
-}
+    <title>Cadastro</title>
+    {% load widget_tweaks %}
+    <style type="text/css">
+    .divider-text {
+        position: relative;
+        text-align: center;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    .divider-text span {
+        padding: 7px;
+        font-size: 12px;
+        position: relative;   
+        z-index: 2;
+    }
+    .divider-text:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        border-bottom: 1px solid #ddd;
+        top: 55%;
+        left: 0;
+        z-index: 1;
+    }
 
-.btn-facebook {
-    background-color: #405D9D;
-    color: #fff;
-}
-.btn-twitter {
-    background-color: #42AEEC;
-    color: #fff;
-}
+    .btn-facebook {
+        background-color: #405D9D;
+        color: #fff;
+    }
+    .btn-twitter {
+        background-color: #42AEEC;
+        color: #fff;
+    }
 </style>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -44,98 +45,70 @@
 
 </head>
 <body>
-<div class="container">
-<br>
-<hr>
+    <div class="container">
+        <br>
+        <hr>
 
-<div class="card bg-light">
-<article class="card-body mx-auto" style="max-width: 400px;">
-<<<<<<< HEAD
 
-	<form method="POST"> 
-        {% csrf_token %}
-        {{form}}
-    }
-    }
-=======
-	<h4 class="card-title mt-3 text-center">Crie a sua Conta de Usuario</h4>
-	<p class="text-center">Crie uma conta de administrador do Zero.</p>
 
-	<p class="divider-text">
-     
-    </p>
-	<form>
->>>>>>> 13791f546b916faaddcdfa9b5c640b4bb1f6bfde
-	<div class="form-group input-group">
-		<div class="input-group-prepend">
-		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-		 </div>
-        <input name="" class="form-control" placeholder="Seu Nome" type="text">
 
-    </div> <!-- form-group// -->
 
-<div class="form-group input-group">
-        <div class="input-group-prepend">
-            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-         </div>
-        <input name="" class="form-control" placeholder="CPF" type="text">
-        
-    </div> <!-- form-group// -->
+        <div class="card bg-light">
+            <article class="card-body mx-auto" style="max-width: 400px;">
 
-    <div class="form-group input-group">
-    	<div class="input-group-prepend">
-		    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
-		 </div>
-<<<<<<< HEAD
-        <input name="" class="form-control" placeholder="Endereço de E-mail" type="email">
-    </div> <!-- form-group// -->
-=======
-        <input name="" class="form-control" placeholder="E-mail" type="email">
-    </div> <!-- form-group// -->
-    
+                <form method="POST" enctype="multipart/form-data"> 
+                    {% csrf_token %}
+                    {{form}}
+ 
+                    <!-- <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-user"></i> Primeiro nome</span>
+                        </div>
+                        <input {{form.first_name|add_class:"form-control"}}>
+                    </div> 
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-user"></i>Último nome</span>
+                        </div>
+                        <input {{form.last_name|add_class:"form-control"}}>
+                    </div> 
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-user"></i>Nome de Usuário</span>
+                        </div>
+                        <input {{form.username_name|add_class:"form-control"}}>
+                    </div> 
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                        </div>
+                        <input {{form.email_name|add_class:"form-control"}} placeholder="Endereço de E-mail" type="email">
+                    </div> 
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                        </div>
+                        <input {{form.password1_name|add_class:"form-control"}} placeholder="Senha" type="password">
+                    </div> 
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                        </div>
+                        <input {{form.password2_name|add_class:"form-control"}} placeholder="Repetir Senha" type="password">
+                    </div> -->                                      
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block"> Criar Conta </button>
+                    </div> <!-- form-group// -->      
+                    <p class="text-center">Você já é um usuario? <a href="login.html">Fazer Login</a> </p>                                                                 
+                </form>
 
-    <div class="form-group input-group">
-    	<div class="input-group-prepend">
-		    <span class="input-group-text"> <i class="fa fa-building"></i> </span>
-		</div>
-		<select class="form-control">
-			<option selected=""> Selecione a sua Função</option>
-			<option>Reservista</option>
-			<option>Reservista</option>
-			<option>Programador</option>
-            <option>Proprietário</option>
-		</select>
-	</div> <!-- form-group end.// -->
->>>>>>> 13791f546b916faaddcdfa9b5c640b4bb1f6bfde
-    <div class="form-group input-group">
-    	<div class="input-group-prepend">
-		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-		</div>
-        <input class="form-control" placeholder="Senha" type="password">
-    </div> <!-- form-group// -->
-    <div class="form-group input-group">
-    	<div class="input-group-prepend">
-		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-		</div>
-        <input class="form-control" placeholder="Repetir Senha" type="password">
-    </div> <!-- form-group// -->   
+            </article>
+        </div> <!-- card.// -->
 
-    <div class="form-group">
-        <button type="submit" class="btn btn-primary btn-block"> Criar Conta </button>
-    </div> <!-- form-group// -->      
+    </div> 
+    <!--container end.//-->
 
-    <p class="text-center">Você já é um usuario? <a href="{% url 'login' %}">Fazer Login</a> </p>
-    <button type="submit" class="btn btn-danger">Logout</button>
-                                                                     
-</form>
-
-</article>
-</div> <!-- card.// -->
-
-</div> 
-<!--container end.//-->
-
-<br><br>
+    <br><br>
 
 </body>
 </html>
