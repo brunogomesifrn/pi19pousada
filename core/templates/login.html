@@ -8,23 +8,32 @@
   <meta name="author" content="">
   <title> Tela Login</title>
   <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
-
+  <style type="text/css">
+    .center{
+      margin: 0 auto;
+      text-align: center;
+    }
+  </style>
   <!-- Custom styles for this template -->
   <link href="{% static 'css/modern-business.css' %}" rel="stylesheet">
-
+;
 </head>
 <body>
-<h1>Login de Usuário</h1>
-<form action="{% url 'index' %}" method="post">
-{% csrf_token %}
-<p class="btn btn-info">Usuário: {{ form.username.label_tag }} {{ form.username}}</p> <br/>
-<p class="btn btn-info">Senha: {{ form.password1.label_tag }} {{ form.password1}} </p>  <br/>  
-<br/> 
+<h1 align="center">Login de Usuário</h1>
+  <div class="container-fluid">
+    <div class="center">
+      <form action="{% url 'index' %}" method="post">
+        {% csrf_token %}
 
-<button type="submit" class="btn btn-danger">Login</button>
-<button type="submit" class="btn btn-danger">Logout</button>
-</form>
+        <p class="btn btn-info">Usuário: {{ form.username.label_tag }} {{ form.username}}</p> <br/>
+        <p class="btn btn-info">Senha: {{ form.password1.label_tag }} {{ form.password1}} </p>  <br/>  
+        <br/> 
 
+        <button type="submit" class="btn btn-danger">Login</button>
+        <button type="submit" class="btn btn-danger">Logout</button>
+      </form>
+      </div>
+  </div>
  <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
