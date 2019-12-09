@@ -23,7 +23,7 @@ class usuarios(UserCreationForm):
 class Reservar(ModelForm):
     class Meta:
         model = Reservar
-        fields = ['adultos', 'apartamentos', 'quantidade', 'criancas', 'cpf', 'cliente', 'cafe', 'celular', 'entrada', 'saida',]
+        fields = '__all__'
         widgets = {
             'adultos' : forms.NumberInput(attrs={'class':'form-control'}),
             'apartamentos' : forms.SelectMultiple(attrs={'class':'form-control'}),

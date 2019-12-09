@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from core.views import index, cadastro, login, reservar
+from core.views import index, cadastro, do_login, reservar, do_logout
 from django.conf import settings
 from django.contrib.auth import views as auth_views
 from django.conf.urls.static import static
@@ -29,6 +29,7 @@ urlpatterns = [
     path('reservar/', reservar, name='reservar'),
 
     #Autenticação
-    path('login/', login, name='login'),
+    path('login/', do_login, name='login'),
+    path('logout/', do_logout, name='logout'),
     
 ]

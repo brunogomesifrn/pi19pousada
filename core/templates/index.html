@@ -41,10 +41,19 @@
 	      </button>
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav ml-auto">
-	        	<li class="nav-item"><a href="{% url 'login' %}" class="nav-link">LOGIN</a></li>
-	          <li class="nav-item"><a href="{% url 'cadastro' %}" class="nav-link">CADASTRO</a></li>
+	        
+            {% if user.is_authenticated %}
+            <ul class="navbar-nav ml-auto">
+	        	<li class="nav-item"><a href="{% url 'logout' %}" class="nav-link">LOGOUT</a></li>
+	            <li class="nav-item"><a href="{% url 'reservar' %}" class="nav-link">RESERVAR</a></li>
 	        </ul>
+            {% else %}
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a href="{% url 'login' %}" class="nav-link">LOGIN</a></li>
+                <li class="nav-item"><a href="{% url 'cadastro' %}" class="nav-link">CADASTRO</a></li>
+            </ul>
+
+             {% endif %}
 	      </div>
 	    </div>
 	  </nav>
@@ -56,7 +65,7 @@
     			<h2>Bem-Vindo ao portal de entrada <br/>
                  da Nossa Pousada</h2>
     			<h1 class="mb-5">Um lugar no interior, perfeito para você!</h1>
-    			<p><a href="#" class="btn-custom py-3 pr-2">Faça uma Reserva</a></p>
+    			<p><a href="{% url 'reservar' %}" class="btn-custom py-3 pr-2">Faça uma Reserva</a></p>
     		</div>
     	</div>
     	<div class="third js-fullheight">
@@ -344,273 +353,17 @@
 			</div>
 		</section>
 
+
+    
+
 		
-		<section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(../static/images/bg_3.jpg);" data-stellar-background-ratio="0.5">
-    	<div class="container">
-    		<div class="row d-md-flex justify-content-center align-items-center">
-    			<div class="col-lg-8">
-    				<div class="row d-md-flex align-items-center">
-		          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-		            <div class="block-18 text-center">
-		              <div class="text">
-		                <strong class="number" data-number="25">0</strong>
-		                <span>Média de Usuarios</span>
-		              </div>
-		            </div>
-		          </div>
-		          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-		            <div class="block-18 text-center">
-		              <div class="text">
-		                <strong class="number" data-number="225">0</strong>
-		                <span>Usuários Totais</span>
-		              </div>
-		            </div>
-		          </div>
-		          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-		            <div class="block-18 text-center">
-		              <div class="text">
-		                <strong class="number" data-number="25">0</strong>
-		                <span>Apartamentos</span>
-		              </div>
-		            </div>
-		          </div>
-		          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-		            <div class="block-18 text-center">
-		              <div class="text">
-		                <strong class="number" data-number="4">0</strong>
-		                <span>Acesso Diário</span>
-		              </div>
-		            </div>
-		          </div>
-	          </div>
-          </div>
-        </div>
-    	</div>
-    </section>
-
-		<section class="ftco-section ftc-no-pb ftc-no-pt bg-light">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-5 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url(../static/images/bg_2.jpg);">
-						<a href="https://vimeo.com/45830194" class="icon popup-vimeo d-flex justify-content-center align-items-center">
-							<span class="icon-play"></span>
-						</a>
-					</div>
-					<div class="col-md-7 py-5 wrap-about pb-md-5 ftco-animate">
-	          <div class="heading-section pt-md-5 pl-md-5 mb-5">
-	          	<div class="ml-md-0">
-		          	<span class="subheading">Seja Muito Bem-Vindo</span>
-		            <h2 class="mb-4">Assista a nossa produção</h2>
-	            </div>
-	          </div>
-	          <div class="pb-md-5">
-							<p>
-                            No caminho, ela encontrou uma cópia. A cópia advertia o Texto Cego Pouco, que de onde veio teria sido reescrito mil vezes e tudo o que restava de sua origem seria a palavra "e" e o Texto Pouco Cego deveria se virar e retornar ao seu, país seguro. Mas nada do que a cópia dizia poderia convencê-la e, por isso, não demorou muito tempo até que alguns escritores de cópia insidiosos a emboscaram, a embebedaram com Longe e Parole e a arrastaram para a agência deles, onde a abusaram.</p>
-							<p>Quando alcançou as primeiras colinas das Montanhas Itálicas, teve uma última vista de volta ao horizonte de sua cidade natal, Bookmarksgrove, a manchete da Alphabet Village e a sub-linha de sua própria estrada, a Line Lane. Lamentável, uma pergunta retórica correu por seu rosto, então ela continuou seu caminho.</p>
-							<ul class="ftco-social d-flex">
-                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="https://pousada-visao.negocio.site/?m=true"><span class="icon-google-plus"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-              </ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-    <section class="ftco-section testimony-section">
-      <div class="container">
-        <div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section ftco-animate text-center">
-          	<span class="subheading">Últimas Avaliações</span>
-            <h2 class="mb-4">Nosso cliente satisfeito disse: </h2>
-            <p>Muito longe, atrás da palavra montanhas, longe dos países Vokalia e Consonantia, vivem os textos cegos. Separados eles vivem em</p>
-          </div>
-        </div>
-        <div class="row ftco-animate">
-          <div class="col-md-12">
-            <div class="carousel-testimony owl-carousel">
-              <div class="item">
-                <div class="testimony-wrap p-4 pb-5 text-center">
-                  <div class="user-img mb-5" style="background-image: url(../static/images/person_2.jpg)">
-                    <span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
-                  </div>
-                  <div class="text">
-                  	<p class="rate">
-		        					<span class="icon-star"></span>
-		        					<span class="icon-star"></span>
-		        					<span class="icon-star"></span>
-		        					<span class="icon-star"></span>
-		        					<span class="icon-star-half-full"></span>
-		        				</p>
-                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <p class="name">Garreth Smith</p>
-                    <span class="position">Guest from London</span>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimony-wrap p-4 pb-5 text-center">
-                  <div class="user-img mb-5" style="background-image: url(../static/images/person_2.jpg)">
-                    <span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
-                  </div>
-                  <div class="text">
-                  	<p class="rate">
-		        					<span class="icon-star"></span>
-		        					<span class="icon-star"></span>
-		        					<span class="icon-star"></span>
-		        					<span class="icon-star"></span>
-		        					<span class="icon-star-half-full"></span>
-		        				</p>
-                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <p class="name">Garreth Smith</p>
-                    <span class="position">Guests from USA</span>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimony-wrap p-4 pb-5 text-center">
-                  <div class="user-img mb-5" style="background-image: url(../static/images/person_3.jpg)">
-                    <span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
-                  </div>
-                  <div class="text">
-                  	<p class="rate">
-		        					<span class="icon-star"></span>
-		        					<span class="icon-star"></span>
-		        					<span class="icon-star"></span>
-		        					<span class="icon-star"></span>
-		        					<span class="icon-star-half-full"></span>
-		        				</p>
-                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <p class="name">Garreth Smith</p>
-                    <span class="position">Guest from Hawaii</span>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimony-wrap p-4 pb-5 text-center">
-                  <div class="user-img mb-5" style="background-image: url(../static/images/person_1.jpg)">
-                    <span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
-                  </div>
-                  <div class="text">
-                  	<p class="rate">
-		        					<span class="icon-star"></span>
-		        					<span class="icon-star"></span>
-		        					<span class="icon-star"></span>
-		        					<span class="icon-star"></span>
-		        					<span class="icon-star-half-full"></span>
-		        				</p>
-                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <p class="name">Garreth Smith</p>
-                    <span class="position">Guests from Norway</span>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimony-wrap p-4 pb-5 text-center">
-                  <div class="user-img mb-5" style="background-image: url(../static/images/person_1.jpg)">
-                    <span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
-                  </div>
-                  <div class="text">
-                  	<p class="rate">
-		        					<span class="icon-star"></span>
-		        					<span class="icon-star"></span>
-		        					<span class="icon-star"></span>
-		        					<span class="icon-star"></span>
-		        					<span class="icon-star-half-full"></span>
-		        				</p>
-                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <p class="name">Garreth Smith</p>
-                    <span class="position">Guest from Italy</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-		<section class="ftco-section bg-light">
-			<div class="container">
-				<div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section ftco-animate text-center">
-          	<span class="subheading">Blog</span>
-            <h2 class="mb-4"> Nosso último Post</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
-          </div>
-        </div>	
-				<div class="row">
-          <div class="col-md-4 ftco-animate">
-            <div class="blog-entry">
-              <a href="blog-single.html" class="block-20" style="background-image: url('../static/images/image_1.jpg');">
-              </a>
-              <div class="text py-4">
-                <div class="meta mb-3">
-                  <div><a href="#">Outubro. 12, 2018</a></div>
-                  <div><a href="#">Administrador</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                </div>
-                <div class="desc">
-	                <h3 class="heading"><a href="#">Mesmo o apontador todo-poderoso não tem controle sobre os textos cegos</a></h3>
-	              </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 ftco-animate">
-            <div class="blog-entry" data-aos-delay="100">
-              <a href="blog-single.html" class="block-20" style="background-image: url('../static/images/image_2.jpg');">
-              </a>
-              <div class="text py-4">
-                <div class="meta mb-3">
-                  <div><a href="#">Outubro. 12, 2018</a></div>
-                  <div><a href="#">Administrador</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                </div>
-                <div class="desc">
-	                <h3 class="heading"><a href="#">Mesmo o apontador todo-poderoso não tem controle sobre os textos cegos</a></h3>
-	              </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 ftco-animate">
-            <div class="blog-entry" data-aos-delay="200">
-              <a href="blog-single.html" class="block-20" style="background-image: url('../static/images/image_3.jpg');">
-              </a>
-              <div class="text py-4">
-                <div class="meta mb-3">
-                  <div><a href="#">Outubro. 12, 2018</a></div>
-                  <div><a href="#">Administrador</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                </div>
-                <div class="desc">
-	                <h3 class="heading"><a href="#">Mesmo o apontador todo-poderoso não tem controle sobre os textos cegos</a></h3>
-	              </div>
-              </div>
-            </div>
-          </div>
-        </div>
-			</div>
-		</section>
 
     <footer class="ftco-footer ftco-bg-dark ftco-section">
       <div class="container">
         <div class="row mb-5 d-flex">
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Sobre a empresa</h2>
+              <h2 class="ftco-heading-2">Sobre o Hotel</h2>
               <p> Somos uma empresa do âmbito de hotelaria que oferta serviço de hospedagem com muita hospitalidade. Estamos localizado as margens da BR-101 no interior do Rio Grande do Norte. Nos situamos no ponto central do litoral Sul do estado, próximos das principais praias do estado, como Pipa, Tibau do Sul e Baía Formosa.    
               </p>
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">

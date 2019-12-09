@@ -22,7 +22,7 @@
 <h1 align="center">Login de Usuário</h1>
   <div class="container-fluid">
     <div class="center">
-      <form action="{% url 'index' %}" method="post">
+      <form action="{% url 'login' %}" method="post">
         {% csrf_token %}
 
         <p class="btn btn-info"> {{ form.username.label_tag }} {{ form.username}}</p> <br/>
